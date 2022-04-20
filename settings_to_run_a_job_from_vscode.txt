@@ -1,0 +1,19 @@
+{
+"jenkins-runner.jobs": {
+
+    "ide": {
+        "isDefault": true,
+        "runWith": "pipelines-8082",
+        "name": "ide",
+    }
+    },
+    "jenkins-runner.hostConfigs": {
+       "pipelines-8082": {
+       
+           "url": "http://localhost:8082",
+           "user": "mahmoud",
+           "passowrd": "yarb1234",
+           "userCrumbIssuer": true
+       }
+    }
+}
