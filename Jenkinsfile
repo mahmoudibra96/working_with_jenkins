@@ -24,8 +24,16 @@ pipeline {
             post {
                
                 always {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
+                 //   junit '**/target/surefire-reports/TEST-*.xml'
+                 //   archiveArtifacts 'target/*.jar'
+                //}
+               // changed {
+                    emailext attachLog: true,
+                     body: 'please go to ${BUILD_NUMBER} and verify the build . ', 
+                     compressLog: true,
+                     recipientProviders: [buildUser()], 
+                     subject: 'job\'${JOB_NAME}\'{${BUILD_NUMBER}} is waiting', 
+                     to: 'test@localhost:8082'
                 }
             }
         }
